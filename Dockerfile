@@ -1,5 +1,5 @@
 #----------------------------------
-# Stage 1
+# Stage 1 - build stage
 #----------------------------------
 
 # Import docker image with maven installed
@@ -15,7 +15,7 @@ COPY . /app
 RUN mvn clean install -DskipTests=true
 
 #--------------------------------------
-# Stage 2
+# Stage 2 - runtime stage
 #--------------------------------------
 
 # Import small size java image
