@@ -41,7 +41,7 @@ If you are on Windows, refer to this [guide](https://amitabhdevops.hashnode.dev/
 
 1. **Fork the Repository:**
     
-    * Open the repository [DevOps Mega Project](https://github.com/Amitabh-DevOps/DevOps-mega-project) on GitHub.
+    * Open the repository [DevOps Mega Project](https://github.com/sandesh300/DevSecOps-Pipeline-on-AWS-EKS.git) on GitHub.
         
     * Click **Fork** to create a copy in your GitHub account.
         
@@ -123,7 +123,7 @@ If you are on Windows, refer to this [guide](https://amitabhdevops.hashnode.dev/
     
     * Enter a name as `mega-project-key`.
         
-    * Update the `variable.tf` file with the key name , if you have entered another key name.
+    * Update the `variable.tf` file with the key name, if you have entered another key name.
         
 2. **Initialize Terraform**: Run the initialization command to download provider plugins and prepare your working directory:
     
@@ -389,4 +389,5 @@ Once connected, your repository will be ready for deploying applications via Arg
 source community and contribute to this project. Let’s work together to make this project even better!
 
 We look forward to your innovative contributions, and remember, great work deserves great rewards!
+
 
