@@ -369,6 +369,7 @@ argocd cluster add mega-project-user@bankapp-cluster.eu-west-1.eksctl.io --name 
 
 To integrate your Git repository with ArgoCD:
 
+<<<<<<< Updated upstream
 1. Navigate to **Settings** &gt; **Repositories** in the ArgoCD UI.
     
 2. Click on **Connect Repo** and provide the appropriate repository URL.
@@ -829,3 +830,6 @@ To contribute, simply **fork the repository**, make your changes, and submit a *
 We welcome all developers, whether beginners or experienced, to join the open-source community and contribute to this project. Let’s work together to make this project even better!
 
 We look forward to your innovative contributions, and remember, great work deserves great rewards!
+=======
+1. Navigate to **Settings** &
+>>>>>>> Stashed changes
