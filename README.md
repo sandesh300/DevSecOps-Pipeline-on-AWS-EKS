@@ -1,9 +1,164 @@
-# DevSecOps Mega Project-Springboot Bankapp
+#  DevSecOps Mega Project – Spring Boot BankApp on AWS EKS
 
-## End-to-End Bank Application Deployment using DevSecOps on AWS EKS
-- This is a multi-tier bank an application written in Java (Springboot).
+An end-to-end **Banking Application Deployment** using **DevSecOps practices** on AWS EKS, featuring CI/CD automation, GitOps deployment, security scanning, observability, and scalable Kubernetes infrastructure.
 
-  
+---
+
+##  Project Overview
+
+This project demonstrates how to build, secure, deploy, and monitor a **multi-tier Spring Boot banking application** using modern DevSecOps tooling:
+
+- Infrastructure as Code with Terraform  
+- Kubernetes on AWS EKS  
+- Jenkins CI pipeline  
+- GitOps with ArgoCD  
+- Container security with Trivy  
+- Code quality via SonarQube  
+- Monitoring with Prometheus & Grafana  
+- HTTPS via Cert-Manager  
+- Auto-scaling using HPA  
+
+---
+
+##  Architecture Highlights
+
+- **CI Pipeline:** Jenkins → SonarQube → Trivy → DockerHub  
+- **CD Pipeline:** GitHub → ArgoCD → EKS  
+- **Ingress:** NGINX Controller + ALB  
+- **Security:** IAM, SSL, Image Scanning  
+- **Observability:** Prometheus + Grafana  
+- **Scaling:** HPA with Metrics Server  
+
+---
+
+##  Tools & Technologies
+
+| Category | Tools |
+|---------|------|
+| Cloud | AWS |
+| IaC | Terraform |
+| CI | Jenkins |
+| CD | ArgoCD |
+| Containers | Docker |
+| Orchestration | Kubernetes (EKS) |
+| Security | Trivy, SonarQube, Cert-Manager |
+| Monitoring | Prometheus, Grafana |
+| Ingress | NGINX |
+| Package Mgmt | Helm |
+
+---
+
+##  Architecture Diagram
+<img width="1536" height="1024" alt="aws-eks" src="https://github.com/user-attachments/assets/934d2213-91b3-4d05-bcda-a4294a5e976f" />
+
+## End-to-End Flow
+
+## 🧑‍💻 1. Developer → Git Repository
+
+Developers push code into **GitHub**.
+
+The repository contains:
+
+- Spring Boot application source code  
+- Dockerfile  
+- Kubernetes manifests  
+- Helm charts  
+- ArgoCD configurations  
+- Terraform Infrastructure-as-Code  
+
+A **webhook** triggers Jenkins automatically on every commit.
+
+---
+
+## ⚙️ 2. Jenkins CI Pipeline (Build + Security)
+
+Jenkins executes the Continuous Integration workflow:
+
+### Pipeline Steps
+
+- ✅ Compile & test Java application  
+- 🔍 SonarQube → code quality scan  
+- 🛡️ Trivy → container vulnerability scan  
+- 🐳 Build Docker image  
+- 📤 Push image to Docker Hub  
+
+Only **secure and compliant images** move forward in the pipeline.
+
+---
+
+## ☁️ 3. Infrastructure Provisioning with Terraform on AWS
+
+Terraform provisions cloud infrastructure on **Amazon Web Services**:
+
+### Resources Created
+
+- VPC & networking  
+- EC2 bastion / master host  
+- IAM roles & policies  
+- EKS cluster  
+- Node groups  
+- Security groups  
+
+From the EC2 machine:
+
+- `eksctl` and `kubectl` are used to manage the Kubernetes cluster.
+
+---
+
+## 🚀 4. GitOps Deployment using ArgoCD
+
+Deployment is fully GitOps-driven using **ArgoCD**.
+
+### Flow
+
+- ArgoCD monitors GitHub repository  
+- Syncs Kubernetes manifests  
+- Deploys into EKS  
+- Auto-heals configuration drift  
+- Prunes deleted resources  
+
+**Helm charts** are used for templating and versioning.
+
+---
+
+## ☸️ 5. Kubernetes Runtime + Traffic Handling
+
+Inside Kubernetes (EKS):
+
+- BankApp pods run in namespaces  
+- HPA scales pods automatically  
+- Metrics Server provides CPU/memory metrics  
+- Cert-Manager handles TLS certificates  
+- NGINX Ingress or NodePort exposes services  
+
+### Traffic Path :
+- User → Load Balancer / Ingress → Service → Pods
+
+---
+
+## 📊 6. Monitoring & Observability
+
+Observability stack includes:
+
+- Prometheus → metrics scraping  
+- Grafana → dashboards & visualization  
+
+### Metrics Tracked
+
+- Pod health  
+- CPU & memory usage  
+- Request latency  
+- Node status  
+- Auto-scaling behavior  
+
+---
+
+##  Summary
+
+**Developers push code to GitHub, Jenkins runs CI with SonarQube and Trivy, builds Docker images and pushes them to Docker Hub. Terraform provisions AWS infrastructure including EKS. ArgoCD performs GitOps-based deployment into Kubernetes using Helm. Traffic reaches the application through Ingress or Load Balancer, HPA auto-scales pods, and Prometheus–Grafana provide monitoring.**
+
+---
+
 ## Step 1: Creating an IAM User with Administrator Permissions
 
 1. **Login to AWS Console:** Open the [AWS Management Console](https://aws.amazon.com/console/).
@@ -766,6 +921,7 @@ Now that **Prometheus** and **Grafana** are set up, you can use **Grafana** to m
 In conclusion, your DevSecOps Mega Project showcases a well-structured and automated pipeline using industry-standard tools. You've effectively integrated AWS, Docker, Kubernetes (EKS), Helm, and ArgoCD for deployment automation. By leveraging Terraform for infrastructure as code and implementing security best practices like IAM roles, SSL certificates, and Horizontal Pod Autoscaling, your setup ensures a secure, scalable, and efficient environment. The project demonstrates strong knowledge in cloud infrastructure, containerization, and CI/CD practices, positioning you well for real-world DevSecOps implementation.
 
 ---
+
 
 
 
